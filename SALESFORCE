@@ -1,0 +1,145 @@
+SALESFORCE
+
+Salesforce Mini Project – Step-by-Step Guide (Very Simple)
+You can make a simple Student Management System or Employee Management System in Salesforce. This is enough for practical exams and viva.
+
+What You Will Build
+A custom Salesforce app with:
+* Custom Object
+* Fields
+* Tabs
+* Records
+* Reports
+Example Project: Student Management System
+
+STEP 1 — Create Salesforce Free Account
+Go to:
+Salesforce Developer Signup
+Fill:
+* Name
+* Email
+* Username → use unique email
+* Country
+Click Sign Me Up
+Then:
+* Verify email
+* Set password
+Login at:
+Salesforce Login
+
+STEP 2 — Open Setup
+After login:
+1. Click ⚙️ Gear icon (top right)
+2. Click Setup
+
+STEP 3 — Create Custom App
+Search:
+App Manager
+Then:
+1. Click App Manager
+2. Click New Lightning App
+Fill:
+Field	Value
+App Name	Student Management
+Description	Mini Project
+Click:
+* Next
+* Next
+* Save & Finish
+
+STEP 4 — Create Custom Object
+Search:
+Object Manager
+Then:
+1. Click Create
+2. Click Custom Object
+Fill:
+Field	Value
+Label	Student
+Plural Label	Students
+Record Name	Student Name
+Tick:
+* Allow Reports
+* Launch New Tab Wizard
+Click:
+Save
+
+STEP 5 — Create Fields
+Inside Student Object:
+Go:
+Fields & Relationships → New
+Create these fields:
+Field Type	Field Name
+Number	Roll Number
+Email	Email
+Phone	Phone
+Date	Admission Date
+Picklist	Course
+For Course values:
+BCA
+BBA
+MCA
+MBA
+Click Save after each.
+
+STEP 6 — Create Tab
+After saving object:
+1. Tab Style → choose any color/icon
+2. Next
+3. Save
+
+STEP 7 — Add Object to App
+Go:
+App Manager
+1. Edit your app
+2. Navigation Items
+3. Add:
+    * Students
+Save.
+
+STEP 8 — Run the Application
+Now:
+1. Click App Launcher (9 dots)
+2. Open:
+Student Management
+You will see:
+* Students Tab
+Click:
+New
+Add sample data.
+Example:
+Name	Roll No	Course
+Arpit	101	MCA
+Save.
+
+STEP 9 — Create Report
+Search:
+Reports
+Then:
+1. New Report
+2. Select:
+Students
+1. Create Report
+You can show:
+* Student Names
+* Courses
+* Emails
+Save Report.
+
+STEP 10 — Create Dashboard (Optional)
+Search:
+Dashboards
+1. New Dashboard
+2. Add chart
+3. Use Student Report
+Save.
+
+HOW TO RUN DURING PRACTICAL
+Quick Demo Flow
+1. Login Salesforce
+2. Open Student Management App
+3. Open Students Tab
+4. Click New
+5. Add Student Record
+6. Show Reports
+Done ✅
