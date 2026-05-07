@@ -1,0 +1,180 @@
+3-TWO VM
+
+DIRECT STEPS TO RUN FILE TRANSFER BETWEEN 2 VMs
+STEP 1 — Start Both VMs
+Open:
+* VMware Workstation OR Oracle VM VirtualBox
+Start:
+* VM1
+* VM2
+
+STEP 2 — Open Terminal in BOTH VMs
+Shortcut:
+Ctrl + Alt + T
+
+STEP 3 — Find IP Address of VM1
+In VM1 terminal:
+hostname -I
+Example output:
+192.168.64.5
+
+STEP 4 — Find IP Address of VM2
+In VM2 terminal:
+hostname -I
+Example:
+192.168.64.6
+
+STEP 5 — TEST CONNECTION
+From VM1:
+ping 192.168.64.6
+If ping works:
+Press:
+CTRL + C
+
+STEP 6 — CREATE FILE IN VM1
+echo "Hello Practical" > demo.txt
+Check file:
+ls
+
+STEP 7 — TRANSFER FILE
+In VM1:
+scp demo.txt ubuntu@192.168.64.6:/home/ubuntu/
+
+STEP 8 — ENTER PASSWORD
+Type password of VM2.
+If asked:
+Are you sure you want to continue connecting?
+Type:
+yes
+Then password again.
+
+STEP 9 — VERIFY FILE IN VM2
+Go to VM2 terminal:
+ls
+You will see:
+demo.txt
+Open file:
+cat demo.txt
+Output:
+Hello Practical
+
+DONE ✅
+File transferred successfully.
+
+IF ERROR COMES
+SSH NOT RUNNING
+Run in VM2:
+sudo service ssh start
+
+FINAL SHORT VERSION FOR EXAM
+VM1
+hostname -I
+echo "Hello" > demo.txt
+scp demo.txt ubuntu@IP:/home/ubuntu/
+VM2
+hostname -I
+ls
+cat demo.txt
+
+COMPLETE INSTALLATION + RUN COMMANDS
+File Transfer Between Two Virtual Machines Using SCP
+
+STEP 1 — INSTALL OPENSSH IN BOTH VMs
+Open terminal in BOTH VMs.
+Run:
+sudo apt update
+Then:
+sudo apt install openssh-server -y
+
+STEP 2 — START SSH SERVICE
+Run in BOTH VMs:
+sudo service ssh start
+OR
+sudo systemctl start ssh
+
+STEP 3 — CHECK SSH STATUS
+sudo systemctl status ssh
+You should see:
+active (running)
+Press:
+Q
+to exit.
+
+STEP 4 — FIND IP ADDRESS
+In VM1:
+hostname -I
+Example:
+192.168.64.5
+In VM2:
+hostname -I
+Example:
+192.168.64.6
+
+STEP 5 — TEST NETWORK CONNECTION
+From VM1:
+ping 192.168.64.6
+If working:
+Press:
+CTRL + C
+
+STEP 6 — CREATE FILE IN VM1
+echo "Hello Practical Exam" > demo.txt
+Check:
+ls
+
+STEP 7 — TRANSFER FILE
+scp demo.txt ubuntu@192.168.64.6:/home/ubuntu/
+Enter password of VM2.
+If asked:
+Are you sure you want to continue connecting?
+Type:
+yes
+
+STEP 8 — VERIFY FILE IN VM2
+Go to VM2:
+ls
+Open file:
+cat demo.txt
+
+COMPLETE INSTALLATION COMMANDS ONLY
+sudo apt update
+sudo apt install openssh-server -y
+sudo service ssh start
+sudo systemctl status ssh
+hostname -I
+
+COMPLETE PRACTICAL COMMANDS ONLY
+VM1
+hostname -I
+ping 192.168.64.6
+echo "Hello Practical Exam" > demo.txt
+ls
+scp demo.txt ubuntu@192.168.64.6:/home/ubuntu/
+
+VM2
+hostname -I
+ls
+cat demo.txt
+
+IF SSH COMMAND NOT FOUND
+Install manually:
+sudo apt install ssh -y
+
+IF CONNECTION REFUSED
+Run:
+sudo service ssh restart
+
+IF PERMISSION DENIED
+Give permission:
+chmod 777 demo.txt
+
+VERY IMPORTANT VIVA COMMANDS
+scp
+ssh
+ping
+hostname -I
+ip a
+ls
+cat
+pwd
+chmod
